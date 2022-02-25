@@ -69,3 +69,51 @@ textarea{
  font-size: 20px;
  transition: all .3s ease-in-out;
 }
+
+/* ul {
+ display: flex;
+flex-direction: column;
+width: 100%;
+} */
+
+ul li {
+ display: flex;
+ flex-direction: row;
+ width: 100%;
+ height: 15vh;
+}
+
+.time {
+ display: flex;
+ justify-content: flex-start;
+ align-items: center;
+ justify-content: center;
+ border: 1px solid black;
+ width: 15%;
+
+}
+
+.input {
+ display: flex;
+ width: 70%;
+ justify-content: center;
+ align-items: center;
+ border: 1px solid black;
+}
+
+.btn {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ width: 15%;
+ border: 1px solid black;
+ background-color: lightblue;
+}
+
+.btn:hover {
+ background-color: lightslategray;
+}
+
+ul li .time {
+background-image: linear-gradient(to bottom, #f3f6f4, #bcbcbc);
+}
