@@ -1,3 +1,9 @@
+// CURRENT DATE
+let date = document.getElementById('currentDay')
+date.textContent = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
+
+
+
 // EVENT TEXTAREAS AND BUTTON FUNCTION
 
 
@@ -8,7 +14,7 @@ var saveButton = document.querySelector('.btn')
 $(".btn").click(function () {
  event.preventDefault();
  var formValue = $(this).siblings(".textarea").val();
- console.log("This worked");
+ console.log(formValue);
  //var listItem = $(this).parent().data("hour");
 
  localStorage.setItem('Event', formValue);
