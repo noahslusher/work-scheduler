@@ -8,5 +8,8 @@
 5. Save text for event into local storage after clicking save button
 6. Saved events persist after refreshing the page
 
+<img width="1469" alt="Screen Shot 2022-02-27 at 1 49 23 PM" src="https://user-images.githubusercontent.com/97577116/155899349-4e458b6d-0f77-4e35-9a74-8758421315d5.png">
+
+
 ### Live URL
 https://noahslusher.github.io/work-scheduler/
