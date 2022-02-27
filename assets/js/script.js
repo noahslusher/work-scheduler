@@ -1,50 +1,57 @@
+// EVENT TEXTAREAS AND BUTTON FUNCTION
+
+
 // Declare variables
 var saveButton = document.querySelector('.btn')
 
 
-// Assign saveTasks function to button
-$('.btn').click(function () {
-var input = $('textarea').val()
- saveTasks(input)
- console.log(input)
-})
+$(".btn").click(function () {
+ event.preventDefault();
+ var formValue = $(this).siblings(".textarea").val();
+ console.log("This worked");
+ //var listItem = $(this).parent().data("hour");
 
-// saveTasks function
-function saveTasks(input) {
- localStorage.setItem("task", JSON.stringify(input))
+ localStorage.setItem('Event', formValue);
+});
+
+
+
+//  CHANGE CALENDAR COLORS
+
+//Change textarea background color based on time
+var checkTime = function () {
+
+ //Get Current time
+ var currentTime = moment().format('H');
+
+
+ //get all elements with class "taskarea"
+ var timeBlockElements = $(".textarea");
+
+
+ //loop through taskarea classes
+ for (var i = 0 ; i < timeBlockElements.length ; i++) {
+  
+     //Get element i's ID as a string
+     var elementID = timeBlockElements[i].id;
+
+     //get element by ID
+     var manipID = document.getElementById(timeBlockElements[i].id)
+
+     //remove any old classes from element
+     $(timeBlockElements[i].id).removeClass(".present .past .future");
+
+     // apply new class if task is present/past/future
+     if (elementID < currentTime) {
+         $(manipID).addClass("past");
+     } else if (elementID > currentTime) {
+         $(manipID).addClass("future");
+     } else {
+         $(manipID).addClass("present");
+     }
+ }
 }
 
-// //Change textarea background color based on time
-// var checkTime = function () {
+// checkTime every 5 minutes
+setInterval(checkTime(), (1000 * 60) * 5);
 
-//  //Get Current time
-//  var currentTime = moment().format('H');
-
-//  //get all elements with class "taskarea"
-//  var timeBlockElements = $(".input");
-
-//  //loop through taskarea classes
-//  for (var i = 0 ; i < timeBlockElements.length ; i++) {
-
-//      //Get element i's ID as a string
-//      var elementID = timeBlockElements[i].id;
-
-//      //get element by ID
-//      var manipID = document.getElementById(timeBlockElements[i].id)
-
-//      //remove any old classes from element
-//      $(timeBlockElements[i].id).removeClass(".present .past .future");
-
-//      // apply new class if task is present/past/future
-//      if (elementID < currentTime) {
-//          $(manipID).addClass("past");
-//      } else if (elementID > currentTime) {
-//          $(manipID).addClass("future");
-//      } else {
-//          $(manipID).addClass("present");
-//      }
-//  }
-// }
-
-// // checkTime every 5 minutes
-// setInterval(checkTime(), (1000 * 60) * 5);

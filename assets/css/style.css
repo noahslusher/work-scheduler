@@ -90,6 +90,7 @@ ul li {
  justify-content: center;
  border: 1px solid black;
  width: 15%;
+ border-radius: 3px;
 
 }
 
@@ -99,6 +100,8 @@ ul li {
  justify-content: center;
  align-items: center;
  border: 1px solid black;
+ border-radius: 3px;
+ text-align: center;
 }
 
 .btn {
