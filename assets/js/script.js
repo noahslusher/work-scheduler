@@ -1,22 +1,21 @@
-// CURRENT DATE
+// CURRENT DATE IN HEADER
 let date = document.getElementById('currentDay')
 date.textContent = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
 
 
 
-// EVENT TEXTAREAS AND BUTTON FUNCTION
-
+// EVENT TEXTAREAS AND SAVEBUTTON FUNCTION
 
 // Declare variables
 var saveButton = document.querySelector('.btn')
 
-
+// saveButton function
 $(".btn").click(function () {
  event.preventDefault();
+ // telling saveButton to apply to the event's siblings' values
  var formValue = $(this).siblings(".textarea").val();
  console.log(formValue);
- //var listItem = $(this).parent().data("hour");
-
+// setting the textarea's values to local storage
  localStorage.setItem('Event', formValue);
 });
 
@@ -31,11 +30,11 @@ var checkTime = function () {
  var currentTime = moment().format('H');
 
 
- //get all elements with class "taskarea"
+ //get all elements with class "textarea"
  var timeBlockElements = $(".textarea");
 
 
- //loop through taskarea classes
+ //loop through textarea classes
  for (var i = 0 ; i < timeBlockElements.length ; i++) {
   
      //Get element i's ID as a string
